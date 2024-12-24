@@ -10,3 +10,14 @@ export interface SpeechRecognitionConfig {
   continuous: boolean;
   interimResults: boolean;
 }
+
+export interface Language {
+  code: string;
+  name: string;
+  localName: string;
+}
+
+export interface LanguagePair {
+  languageA: Language;
+  languageB: Language;
+}

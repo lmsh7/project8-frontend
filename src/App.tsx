@@ -1,10 +1,15 @@
+import { useState } from 'react';
+import { HomePage } from '@/components/HomePage';
 import { TranslationChat } from '@/components/TranslationChat';
+import { LanguagePair } from '@/lib/types';
 
 function App() {
-  return (
+  const [languagePair, setLanguagePair] = useState<LanguagePair>();
 
-        <TranslationChat />
-
+  return languagePair ? (
+    <TranslationChat languagePair={languagePair} />
+  ) : (
+    <HomePage onStart={setLanguagePair} />
   );
 }
 
